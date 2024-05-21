@@ -3,12 +3,10 @@ import { generalSite } from "@/constants/constants";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
-// import { Icons } from "./icons";
 import MainNav from "./MainNav";
 import Image from "next/image";
 import MobileNav from "./MobileNav";
-// import { MobileNav } from "./mobile-nav";
-// import { ModeToggle } from "./mode-toggle";
+import ModeToggle from "./ModeToggle";
 
 const Header = () => {
   return (
@@ -33,6 +31,14 @@ const Header = () => {
                   height={20}
                   width={20}
                   alt="github"
+                  className="dark:hidden"
+                />
+                <Image
+                  src="icons/github-light.svg"
+                  height={20}
+                  width={20}
+                  alt="github"
+                  className="hidden dark:inline"
                 />
                 <span className="sr-only">GitHub</span>
               </div>
@@ -57,7 +63,7 @@ const Header = () => {
                 <span className="sr-only">Linkedin</span>
               </div>
             </Link>
-            {/* <ModeToggle /> */}
+            <ModeToggle />
             <MobileNav />
           </nav>
         </div>

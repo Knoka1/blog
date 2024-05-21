@@ -53,11 +53,18 @@ const MobileNav = () => {
           onOpenChange={setOpen}
         >
           <Image
-            src="icons/home.svg"
+            src="icons/logolight.svg"
             width={30}
             height={30}
             alt="Home Icon"
-            className="cursor-pointer "
+            className="cursor-pointer dark:hidden"
+          />
+          <Image
+            src="icons/logodark.svg"
+            width={30}
+            height={30}
+            alt="Home Icon"
+            className="hidden dark:inline"
           />
           <span className="font-bold">{generalSite.name}</span>
         </MobileLink>
