@@ -1,3 +1,4 @@
+import PostCard from "@/components/PostCard";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -24,20 +25,18 @@ const Home = async () => {
       </div>
       <hr className="mt-8" />
       <h1>All Posts</h1>
-      <ul>
-        {posts?.length > 0 ? (
-          posts.map((post) => (
-            <li key={post.id}>
-              <a href={`/post/${post.id}`}>
-                <h2>{post.title}</h2>
-                <p>{post.content}</p>
-              </a>
-            </li>
-          ))
-        ) : (
-          <p>Nothing to see yet</p>
-        )}
-      </ul>
+      {posts?.length > 0 ? (
+        posts.map((post) => (
+          <PostCard
+            key={post.id}
+            id={post.id}
+            title={post.title}
+            content={post.content}
+          />
+        ))
+      ) : (
+        <p>Nothing to see yet</p>
+      )}
     </div>
   );
 };
