@@ -5,6 +5,8 @@ import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 // import { Icons } from "./icons";
 import MainNav from "./MainNav";
+import Image from "next/image";
+import MobileNav from "./MobileNav";
 // import { MobileNav } from "./mobile-nav";
 // import { ModeToggle } from "./mode-toggle";
 
@@ -26,12 +28,17 @@ const Header = () => {
                   "w-10 px-0 hidden sm:inline-flex"
                 )}
               >
-                {/* <Icons.gitHub className="h-4 w-4" /> */}
+                <Image
+                  src="icons/github.svg"
+                  height={20}
+                  width={20}
+                  alt="github"
+                />
                 <span className="sr-only">GitHub</span>
               </div>
             </Link>
-            {/* <Link
-              href={generalSite.links.twitter}
+            <Link
+              href={generalSite.links.linkedin}
               target="_blank"
               rel="noreferrer"
             >
@@ -41,12 +48,17 @@ const Header = () => {
                   "w-10 px-0 hidden sm:inline-flex"
                 )}
               >
-                <Icons.twitter className="h-4 w-4" />
-                <span className="sr-only">Twitter</span>
+                <Image
+                  src="icons/linkedin.svg"
+                  height={20}
+                  width={20}
+                  alt="linkedin"
+                />
+                <span className="sr-only">Linkedin</span>
               </div>
-            </Link> */}
-            {/* <ModeToggle />
-            <MobileNav /> */}
+            </Link>
+            {/* <ModeToggle /> */}
+            <MobileNav />
           </nav>
         </div>
       </div>

@@ -4,7 +4,7 @@ export const generalSite = {
   description: "Your blog for figuring out oil",
   author: "D'Bragas",
   links: {
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/alecdocouto/",
     github: "https://github.com/Knoka1",
   },
 };
