@@ -1,20 +1,3 @@
-import { useRouter } from "next/router";
-import { GetStaticPropsContext } from "next";
-import { Metadata } from "next";
-import axios from "axios";
-
-type Post = {
-  id: number;
-  title: string;
-  content: string;
-};
-
-type PostProps = {
-  params: {
-    id: string;
-  };
-};
-
 const fetchPost = async (id: string): Promise<Post> => {
   const res = await fetch(`http://localhost:3000/api/posts?id=${id}`);
   if (!res.ok) {
