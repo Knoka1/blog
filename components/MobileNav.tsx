@@ -53,14 +53,14 @@ const MobileNav = () => {
           onOpenChange={setOpen}
         >
           <Image
-            src="icons/logolight.svg"
+            src="/icons/logolight.svg"
             width={30}
             height={30}
             alt="Home Icon"
             className="cursor-pointer dark:hidden"
           />
           <Image
-            src="icons/logodark.svg"
+            src="/icons/logodark.svg"
             width={30}
             height={30}
             alt="Home Icon"

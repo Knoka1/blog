@@ -27,14 +27,14 @@ const Header = () => {
                 )}
               >
                 <Image
-                  src="icons/github.svg"
+                  src="/icons/github.svg"
                   height={20}
                   width={20}
                   alt="github"
                   className="dark:hidden"
                 />
                 <Image
-                  src="icons/github-light.svg"
+                  src="/icons/github-light.svg"
                   height={20}
                   width={20}
                   alt="github"
@@ -55,7 +55,7 @@ const Header = () => {
                 )}
               >
                 <Image
-                  src="icons/linkedin.svg"
+                  src="/icons/linkedin.svg"
                   height={20}
                   width={20}
                   alt="linkedin"
