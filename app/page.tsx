@@ -1,8 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
-  // const displayPosts = posts;
+const fetchPosts = async (): Promise<Post[]> => {
+  const res = await fetch("http://localhost:3000/api/posts");
+  if (!res.ok) {
+    throw new Error("Failed to fetch posts");
+  }
+  return res.json();
+};
+const Home = async () => {
+  const posts = await fetchPosts();
   return (
     <div className="container max-w-4xl py-6 lg:py-10">
       <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8">
@@ -14,6 +21,22 @@ export default function Home() {
         </div>
       </div>
       <hr className="mt-8" />
+      <h1>All Posts</h1>
+      <ul>
+        {posts?.length > 0 ? (
+          posts.map((post) => (
+            <li key={post.id}>
+              <a href={`/post/${post.id}`}>
+                <h2>{post.title}</h2>
+                <p>{post.content}</p>
+              </a>
+            </li>
+          ))
+        ) : (
+          <p>Nothing to see yet</p>
+        )}
+      </ul>
     </div>
   );
-}
+};
+export default Home;
