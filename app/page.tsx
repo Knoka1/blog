@@ -1,6 +1,4 @@
 import PostCard from "@/components/PostCard";
-import Image from "next/image";
-import Link from "next/link";
 
 const fetchPosts = async (): Promise<Post[]> => {
   const res = await fetch("http://localhost:3000/api/posts", {
@@ -19,19 +17,20 @@ const Home = async () => {
         <div className="flex-1 space-y-4">
           <h1 className="inline-block font-black text-4xl lg:text-5xl">Blog</h1>
           <p className="text-xl text-muted-foreground">
-            All things oil and tech
+            Tudo sobre petróleo e tecnologia
           </p>
         </div>
       </div>
       <hr className="mt-8" />
-      <h1>All Posts</h1>
       {posts?.length > 0 ? (
         posts.map((post) => (
           <PostCard
             key={post.id}
             id={post.id}
             title={post.title}
+            description={post.description}
             content={post.content}
+            date={post.date}
           />
         ))
       ) : (

@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { buttonVariants } from "./ui/button";
 
-const PostCard = ({ id, title, content }: Post) => {
+const PostCard = ({ id, title, description }: Post) => {
   return (
     <article className="flex flex-col gap-2 border-border border-b py-3">
       <div>
@@ -16,7 +16,7 @@ const PostCard = ({ id, title, content }: Post) => {
           <Tag tag={tag} key={tag} />
         ))} */}
       </div>
-      <div className="max-w-none text-muted-foreground">{content}</div>
+      <div className="max-w-none text-muted-foreground">{description}</div>
       <div className="flex justify-between items-center">
         {/* <dl>
           <dt className="sr-only">Published On</dt>
