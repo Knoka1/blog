@@ -22,7 +22,10 @@ const Home = async () => {
           </p>
         </div>
       </div>
-      <hr className="mt-8" />
+      <span className="relative flex justify-center mt-8">
+        <div className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75"></div>
+      </span>
+
       {posts?.length > 0 ? (
         posts.map((post) => (
           <Suspense key={`Suspense_${post.id}`} fallback={"Loading..."}>
