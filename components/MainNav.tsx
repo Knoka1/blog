@@ -1,7 +1,4 @@
 "use client";
-import { generalSite } from "@/constants/constants";
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import LogoLightAndDark from "./LogoLightAndDark";
 
