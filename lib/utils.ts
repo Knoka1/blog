@@ -1,5 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { z } from "zod";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -20,3 +21,9 @@ export function sortPosts(posts: Array<Post>) {
     return 0;
   });
 }
+export const sendPostFormSchema = () =>
+  z.object({
+    title: z.string().max(32).min(2),
+    description: z.string().max(64).min(2),
+    content: z.string().max(256).min(2),
+  });
