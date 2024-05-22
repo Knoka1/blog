@@ -6,7 +6,7 @@ Aplicação de blog de petróleo simples desenvolvida com Next.js.
 
 ## Como Rodar o Projeto Localmente
 
-1. Clone o repositório:/
+1. Clone o repositório:\
    git clone https://github.com/Knoka1/blog.git/
    cd blog-app
 
@@ -16,7 +16,7 @@ npm install
 
 3. Rode o projeto:
 
-npm run dev/
+npm run dev\
 Acesse a aplicação em http://localhost:3000.
 
 ## Funcionalidades
@@ -24,9 +24,9 @@ Acesse a aplicação em http://localhost:3000.
 1. Listar posts
 2. Visualizar post individual
 3. Adicionar novo post(apenas temporariamente)
-4. Tecnologias Utilizadas:/
-   -Next.js/
-   -TailWind/
-   -Shadcn/
-   -React/
+4. Tecnologias Utilizadas:\
+   -Next.js\
+   -TailWind\
+   -Shadcn\
+   -React\
    +More
