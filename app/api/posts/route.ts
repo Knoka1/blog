@@ -50,7 +50,7 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   const { title, content, description } = await request.json();
   // make it dynamic
-  // const date = Date.now().toString();
+  // const date = new Date().toISOString().split('T')[0];
   const date = "2024-05-20";
   const newPost = { id: posts.length + 1, title, content, description, date };
   posts.push(newPost);

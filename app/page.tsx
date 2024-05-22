@@ -1,4 +1,5 @@
 import PostCard from "@/components/PostCard";
+import { Suspense } from "react";
 
 const fetchPosts = async (): Promise<Post[]> => {
   const res = await fetch("http://localhost:3000/api/posts", {
@@ -24,14 +25,16 @@ const Home = async () => {
       <hr className="mt-8" />
       {posts?.length > 0 ? (
         posts.map((post) => (
-          <PostCard
-            key={post.id}
-            id={post.id}
-            title={post.title}
-            description={post.description}
-            content={post.content}
-            date={post.date}
-          />
+          <Suspense key={`Suspense_${post.id}`} fallback={"Loading..."}>
+            <PostCard
+              key={post.id}
+              id={post.id}
+              title={post.title}
+              description={post.description}
+              content={post.content}
+              date={post.date}
+            />
+          </Suspense>
         ))
       ) : (
         <p>Nothing to see yet</p>
