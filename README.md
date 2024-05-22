@@ -8,7 +8,7 @@ Aplicação de blog de petróleo simples desenvolvida com Next.js.
 
 1. Clone o repositório:\
    git clone https://github.com/Knoka1/blog.git/  
-   cd blog-app
+   cd blog
 
 2. Instale as dependências:
 
