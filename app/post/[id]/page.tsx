@@ -26,8 +26,11 @@ const PostPage = async ({ params }: PostProps) => {
   return (
     <article className="container py-6 prose dark:prose-invert max-w-5xl mx-auto">
       <h1 className="mb-2 text-3xl font-bold">{post.title}</h1>
-      <Tag type="alta" />
-      <Tag type="verde" />
+      <div className="inline-flex space-x-3">
+        <Tag type="alta" />
+        <Tag type="verde" />
+      </div>
+
       <div className="flex justify-between items-center mb-5 mt-3 text-muted-foreground">
         <dl>
           <dt className="sr-only">Publicado Em</dt>
