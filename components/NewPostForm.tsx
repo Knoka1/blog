@@ -31,23 +31,34 @@ const NewPostForm = () => {
   // 2. Define a submit handler.
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     setIsLoading(true);
-    // try {
-    //   if (type === "sign-up") {
-    //     const newUser = await signUp(data);
-    //     setUser(newUser);
-    //   }
-    //   if (type === "sign-in") {
-    //     const response = await signIn({
-    //       email: data.email,
-    //       password: data.password,
-    //     });
-    //     if (response) router.push("/");
-    //   }
-    // } catch (error) {
-    // } finally {
-    //   setIsLoading(false);
-    // }
+    try {
+      const response = await fetch("/api/posts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title: data.title,
+          description: data.description,
+          content: data.content,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to create post");
+      }
+
+      // Optionally, handle the success case
+      alert("Post created successfully!");
+      form.reset();
+    } catch (error) {
+      console.error(error);
+      alert("An error occurred while creating the post");
+    } finally {
+      setIsLoading(false);
+    }
   };
+
   return (
     <section className="flex-col mt-4 mx-20">
       <header className="flex flex-col gap-5 md:gap-8">
@@ -97,7 +108,7 @@ const NewPostForm = () => {
           </form>
         </Form>
       </>
-      <div className="col-span-6 mt-5">
+      <div className="col-span-6 mt-6 mx-4">
         <label htmlFor="MarketingAccept" className="flex gap-4">
           <input
             type="checkbox"
@@ -113,7 +124,7 @@ const NewPostForm = () => {
         </label>
       </div>
 
-      <div className="col-span-6">
+      <div className="col-span-6 mt-1 mx-4">
         <p className="text-sm text-gray-500">
           Ao criar uma conta, você aceita os nossos
           <Link href="/" className="text-gray-700 dark:text-white underline">
