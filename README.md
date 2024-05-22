@@ -25,8 +25,8 @@ Acesse a aplicação em http://localhost:3000.
 2. Visualizar post individual
 3. Adicionar novo post(temporariamente)
 4. Tecnologias Utilizadas:
-   Next.js
-   TailWind
-   Shadcn
-   React
+   -Next.js
+   -TailWind
+   -Shadcn
+   -React
    +More
