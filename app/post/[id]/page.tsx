@@ -1,3 +1,5 @@
+import { formatDate } from "@/lib/utils";
+import { CalendarIcon } from "@radix-ui/react-icons";
 import { notFound } from "next/navigation";
 
 const fetchPost = async (id: string): Promise<Post> => {
@@ -21,15 +23,27 @@ const PostPage = async ({ params }: PostProps) => {
   }
 
   return (
-    <article className="container py-6 prose dark:prose-invert max-w-3xl mx-auto">
-      <h1 className="mb-2">{post.title}</h1>
-      <div className="flex gap-2 mb-2"></div>
-      {post.description}
-      {post.content}
-      {/* {post.description ? (
-        <p className="text-xl mt-0 text-muted-foreground">{post.description}</p>
-      ) : null} */}
+    <article className="container py-6 prose dark:prose-invert max-w-5xl mx-auto">
+      <h1 className="mb-2 text-3xl font-bold">{post.title}</h1>
+      <div className="flex justify-between items-center mb-5 text-muted-foreground">
+        <dl>
+          <dt className="sr-only">Publicado Em</dt>
+          <dd className="text-sm sm:text-base font-medium flex items-center gap-1">
+            <CalendarIcon className="h-4 w-4" />
+            <span>Postado em </span>
+            <time dateTime={post.date}>{formatDate(post.date)}</time>
+          </dd>
+        </dl>
+      </div>
+      <div className="flex gap-2 mb-2">
+        {post.description ? (
+          <p className="text-xl mt-0 text-muted-foreground">
+            {post.description}
+          </p>
+        ) : null}
+      </div>
       <hr className="my-4" />
+      <div className="flex gap-2 mb-2 text-1xl leading-7">{post.content}</div>
     </article>
   );
 };
