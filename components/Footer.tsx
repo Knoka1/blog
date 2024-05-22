@@ -6,7 +6,7 @@ const Footer = () => {
     <footer>
       <div className="mb-6 mt-14 flex flex-col items-center">
         <div className="mb-3 flex space-x-4">
-          <a target="_blank" rel="noreferrer" href="mailto:hello@example.com">
+          {/* <a target="_blank" rel="noreferrer" href="mailto:hello@example.com">
             <span className="sr-only">Mail</span>
           </a>
           <a target="_blank" rel="noreferrer" href={generalSite.links.linkedin}>
@@ -14,7 +14,7 @@ const Footer = () => {
           </a>
           <a target="_blank" rel="noreferrer" href={generalSite.links.github}>
             <span className="sr-only">GitHub</span>
-          </a>
+          </a> */}
         </div>
         <div className="mb-2 flex space-x-2 text-sm text-muted-foreground">
           <a href={generalSite.links.personalSite} target="_blank">

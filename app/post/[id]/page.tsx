@@ -1,3 +1,4 @@
+import Tag from "@/components/Tag";
 import { formatDate } from "@/lib/utils";
 import { CalendarIcon } from "@radix-ui/react-icons";
 import { notFound } from "next/navigation";
@@ -25,7 +26,9 @@ const PostPage = async ({ params }: PostProps) => {
   return (
     <article className="container py-6 prose dark:prose-invert max-w-5xl mx-auto">
       <h1 className="mb-2 text-3xl font-bold">{post.title}</h1>
-      <div className="flex justify-between items-center mb-5 text-muted-foreground">
+      <Tag type="alta" />
+      <Tag type="verde" />
+      <div className="flex justify-between items-center mb-5 mt-3 text-muted-foreground">
         <dl>
           <dt className="sr-only">Publicado Em</dt>
           <dd className="text-sm sm:text-base font-medium flex items-center gap-1">
